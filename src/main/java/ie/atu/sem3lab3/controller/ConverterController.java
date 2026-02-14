@@ -20,7 +20,7 @@ public class ConverterController {
     @GetMapping("/euros")
     public ResponseEntity<?> euros(@RequestParam double a)
     {
-        if (a == 0.0)
+        if (a <= 0.0)
         {
             return ResponseEntity.badRequest().body("Please enter a higher value");
         }
@@ -31,7 +31,7 @@ public class ConverterController {
     @GetMapping("/dollar")
     public ResponseEntity<?> get(@RequestParam int a)
     {
-        if (a == 0.0)
+        if (a <= 0.0)
         {
             return ResponseEntity.badRequest().body("Please enter a higher value");
         }
